@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D7Q-1Z-LYL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Photo_Journal_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gbb-ZV-Rl1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xqI-3g-njy">
+                                    <size key="itemSize" width="236" height="223"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="kpw-Vr-4lG">
+                                        <rect key="frame" x="89" y="0.0" width="236" height="223"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nxC-2c-cIk">
+                                            <rect key="frame" x="0.0" y="0.0" width="236" height="223"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q1y-Hd-Gi3">
+                                                    <rect key="frame" x="20" y="148" width="196" height="67"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lzY-X4-pcO">
+                                                    <rect key="frame" x="43" y="1" width="150" height="137.5"/>
+                                                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lzY-X4-pcO" firstAttribute="height" secondItem="nxC-2c-cIk" secondAttribute="height" multiplier="0.627803" id="5RC-jx-zQu"/>
+                                                <constraint firstItem="lzY-X4-pcO" firstAttribute="leading" secondItem="nxC-2c-cIk" secondAttribute="leading" constant="43" id="AU4-sY-jmj"/>
+                                                <constraint firstItem="q1y-Hd-Gi3" firstAttribute="leading" secondItem="nxC-2c-cIk" secondAttribute="leading" constant="20" id="DnJ-XO-U3g"/>
+                                                <constraint firstItem="q1y-Hd-Gi3" firstAttribute="top" secondItem="lzY-X4-pcO" secondAttribute="bottom" constant="8" id="G23-nm-5cq"/>
+                                                <constraint firstAttribute="bottom" secondItem="q1y-Hd-Gi3" secondAttribute="bottom" constant="8" id="QsR-mr-bWP"/>
+                                                <constraint firstAttribute="trailing" secondItem="lzY-X4-pcO" secondAttribute="trailing" constant="43" id="UrJ-Ab-A99"/>
+                                                <constraint firstAttribute="trailing" secondItem="q1y-Hd-Gi3" secondAttribute="trailing" constant="20" id="j3v-ug-Kmn"/>
+                                                <constraint firstItem="lzY-X4-pcO" firstAttribute="top" secondItem="nxC-2c-cIk" secondAttribute="top" id="nK0-5a-GtR"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="236" height="223"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hne-Yu-waw">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="q4L-Cb-zRC"/>
+                                    <barButtonItem title="Item" image="video.badge.plus.fill" catalog="system" id="Gtm-XM-Q74">
+                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qYi-8r-aOy"/>
+                                    <barButtonItem title="Item" image="gear" catalog="system" id="49o-jf-JkL">
+                                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mUX-dF-vDA"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hne-Yu-waw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7ve-4v-1OB"/>
+                            <constraint firstItem="gbb-ZV-Rl1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CTU-oP-VST"/>
+                            <constraint firstItem="gbb-ZV-Rl1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DbU-du-6HZ"/>
+                            <constraint firstItem="hne-Yu-waw" firstAttribute="top" secondItem="gbb-ZV-Rl1" secondAttribute="bottom" id="EdZ-LX-UW0"/>
+                            <constraint firstItem="hne-Yu-waw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hES-0K-WkU"/>
+                            <constraint firstItem="hne-Yu-waw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ljB-xm-Y4Y"/>
+                            <constraint firstItem="gbb-ZV-Rl1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mXS-m6-pbm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="spn-4r-zMl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="129.91071428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lUV-Ks-ztM">
+            <objects>
+                <viewController id="QaU-YY-rxl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HaE-s8-wmq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="c6o-MT-gjo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LxK-cu-eFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025" y="-181"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OQq-3N-Rrw">
+            <objects>
+                <viewController id="bdY-3T-gs7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LID-pH-9YL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="f3T-qQ-Ksz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DoQ-ku-DoB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025" y="502"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="reU-1l-L7d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D7Q-1Z-LYL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DTV-oe-Q5J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ugt-jh-AXo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuH-hY-v2v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="video.badge.plus.fill" catalog="system" width="64" height="40"/>
+    </resources>
+</document>
