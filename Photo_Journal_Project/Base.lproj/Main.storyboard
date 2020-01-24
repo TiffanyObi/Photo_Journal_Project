@@ -34,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q1y-Hd-Gi3">
-                                                    <rect key="frame" x="20" y="148" width="196" height="67"/>
+                                                    <rect key="frame" x="0.0" y="148" width="236" height="67"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -50,19 +50,15 @@
                                             <constraints>
                                                 <constraint firstItem="lzY-X4-pcO" firstAttribute="height" secondItem="nxC-2c-cIk" secondAttribute="height" multiplier="0.627803" id="5RC-jx-zQu"/>
                                                 <constraint firstItem="lzY-X4-pcO" firstAttribute="leading" secondItem="nxC-2c-cIk" secondAttribute="leading" constant="43" id="AU4-sY-jmj"/>
-                                                <constraint firstItem="q1y-Hd-Gi3" firstAttribute="leading" secondItem="nxC-2c-cIk" secondAttribute="leading" constant="20" id="DnJ-XO-U3g"/>
+                                                <constraint firstItem="q1y-Hd-Gi3" firstAttribute="leading" secondItem="nxC-2c-cIk" secondAttribute="leading" id="DnJ-XO-U3g"/>
                                                 <constraint firstItem="q1y-Hd-Gi3" firstAttribute="top" secondItem="lzY-X4-pcO" secondAttribute="bottom" constant="8" id="G23-nm-5cq"/>
                                                 <constraint firstAttribute="bottom" secondItem="q1y-Hd-Gi3" secondAttribute="bottom" constant="8" id="QsR-mr-bWP"/>
                                                 <constraint firstAttribute="trailing" secondItem="lzY-X4-pcO" secondAttribute="trailing" constant="43" id="UrJ-Ab-A99"/>
-                                                <constraint firstAttribute="trailing" secondItem="q1y-Hd-Gi3" secondAttribute="trailing" constant="20" id="j3v-ug-Kmn"/>
+                                                <constraint firstAttribute="trailing" secondItem="q1y-Hd-Gi3" secondAttribute="trailing" id="j3v-ug-Kmn"/>
                                                 <constraint firstItem="lzY-X4-pcO" firstAttribute="top" secondItem="nxC-2c-cIk" secondAttribute="top" id="nK0-5a-GtR"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="236" height="223"/>
-                                        <connections>
-                                            <outlet property="captionTextView" destination="q1y-Hd-Gi3" id="wLT-Sb-Mod"/>
-                                            <outlet property="photoImageView" destination="lzY-X4-pcO" id="a2J-td-fr7"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -115,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LxK-cu-eFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="-181"/>
+            <point key="canvasLocation" x="1975" y="130"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OQq-3N-Rrw">
@@ -130,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoQ-ku-DoB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="502"/>
+            <point key="canvasLocation" x="874" y="842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="reU-1l-L7d">
