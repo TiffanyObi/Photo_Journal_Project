@@ -16,17 +16,15 @@ class PhotoJournalEntriesViewController: UIViewController {
     
 private var imagePickerController = UIImagePickerController()
     
-private var imageObjects = [ImagesObject]()
+private var imageObjects = [ImageObject]()
     
 private var dataPersistence = PersistenceHelper(filename: "image.plist")
     
-private var selectedImage: UIImage? {
-            didSet {
-                //get called when a new image is selected
-        appendNewPhotoToCollection()
-                
-            }
+    var imageFromJounal: UIImage? {
+        didSet{
+            appendNewPhotoToCollection()
         }
+    }
     
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -34,9 +32,12 @@ private var selectedImage: UIImage? {
             photoCollectionView.delegate = self
             
             //set UIImagePickerController delegate as this view controller
-            imagePickerController.delegate = self
+            
             loadImageObjects()
         }
+    override func viewWillAppear(_ animated: Bool) {
+        loadImageObjects()
+    }
         
         private func loadImageObjects() {
             do {
@@ -45,39 +46,25 @@ private var selectedImage: UIImage? {
                 print("loading error: \(error)")
             }
         }
+        @IBAction func cancelButtonPressed(segue: UIStoryboardSegue) {
+               // get a reference to the CreateEventController instance
+            guard segue.source is AddPhotoJournalEntryViewController else {
+          return
+           }
+           
+                }
+    
+    @IBAction func saveButtonPressed(segue: UIStoryboardSegue) {
+          
+
+        loadImageObjects()
         
         
-        @IBAction func addPictureButtonPressed(_ sender: UIBarButtonItem) {
-            print("button pressed")
-            
-            //we want to present an action sheet to the user
-            //        actions: camera, photo library, cancel
-            
-            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] alertAction in
-                self?.showImageController(isCameraSelected: true)
-            }
-            
-            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) {[weak self]
-                alertAction in
-                self?.showImageController(isCameraSelected: false)
-            }
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            
-            //check if camera is available. of camera is not available. app will crash.
-            
-            if UIImagePickerController.isSourceTypeAvailable(.camera){
-                alertController.addAction(cameraAction)
-            }
-            
-            alertController.addAction(photoLibraryAction)
-            alertController.addAction(cancelAction)
-            present(alertController,animated: true)
-        }
-        
-        private func appendNewPhotoToCollection() {
-            guard let image = selectedImage else {
+    
+      }
+      
+private func appendNewPhotoToCollection() {
+            guard let image = imageFromJounal else {
                 return
             }
             
@@ -100,17 +87,13 @@ private var selectedImage: UIImage? {
             }
             print("resizedImage image size is : \(resizedImage.size)")
             // here we need to create an image object
-            let imageObject = ImagesObject(imageData: imageData, date: Date())
+            let imageObject = ImageObject(imageData: imageData, date: Date())
             
-            // then we want to insert new imageobjectCell into [ImageObjects].
-            imageObjects.insert(imageObject, at: 0)
+        imageObjects.insert(imageObject, at: 0)
             
-            //create an indexPath for insertion into collection view.
-            let indexPath = IndexPath(row: 0, section: 0)
-            
-            //insert this new Cell into your collection view,
-            photoCollectionView.insertItems(at: [indexPath])
-            
+          imageFromJounal = image
+            dismiss(animated: true)
+        
             //persist image object to documents directory
             do {
                 try dataPersistence.create(item: imageObject)
@@ -118,29 +101,18 @@ private var selectedImage: UIImage? {
                 print(" saving error: \(error) ")
             }
         }
-        
-        private func showImageController(isCameraSelected:Bool) {
-            //source type default will be .photoLibrary
-            
-            imagePickerController.sourceType = .photoLibrary
-            
-            if isCameraSelected {
-                imagePickerController.sourceType = .camera
-        }
-        present(imagePickerController, animated: true)
-        }
-        
-        
-    }
+
+}
     // MARK: - UICollectionViewDataSource
     extension PhotoJournalEntriesViewController: UICollectionViewDataSource {
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            print(imageObjects.count)
             return imageObjects.count
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             //STEP 4: creating custon delegate - set delegate object must have an instance of what u want to set the delegate on.
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ImageCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? ImageCell else {
                 fatalError("could not downcast to an ImageCell")
             }
             
@@ -162,24 +134,8 @@ private var selectedImage: UIImage? {
             return CGSize(width: itemWidth, height: itemWidth)  }
     }
 
-    extension PhotoJournalEntriesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            //        we need to access the UIImagePickerController.InfoKey.origainalImage key to get the UIImage that was selected.
-            guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-                
-                print("Image selection not found")
-                return
-            }
-            
-            selectedImage = image
-            dismiss(animated: true)
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-    dismiss(animated: true)
-        }
-    }
+  
+    
 
     //STEP 6 : comform to delegate
 

@@ -21,6 +21,10 @@ class ImageCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    
+    
     //STEP 2:create custom delegate - define optional delegate variable
     weak var delegate: ImageCellDelegate?
     
@@ -40,7 +44,7 @@ class ImageCell: UICollectionViewCell {
         addGestureRecognizer(longPressGesture)
     }
     
-    func configureCell(for imageObject: ImagesObject) {
+    func configureCell(for imageObject: ImageObject) {
         
         //converting Data to UIImage
         guard let image = UIImage(data: imageObject.imageData) else {
@@ -48,6 +52,7 @@ class ImageCell: UICollectionViewCell {
         }
         
         imageView.image = image
+        
     }
     
     // function gets called when longPress is activated.

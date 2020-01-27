@@ -21,7 +21,7 @@ class PersistenceHelper {
   // CRUD - create, read, update, delete
   
   // array of events
-  private var images = [ImagesObject]()
+  private var images = [ImageObject]()
   
   private var filename: String
   
@@ -51,7 +51,7 @@ class PersistenceHelper {
   }
   
   // for re-ordering
-  public func reorderEvents(item: [ImagesObject]) {
+  public func reorderEvents(item: [ImageObject]) {
     self.images = item
     try? save()
   }
@@ -59,7 +59,7 @@ class PersistenceHelper {
   // DRY - don't repeat yourself
   
   // create - save item to documents directory
-  public func create(item: ImagesObject) throws {
+  public func create(item: ImageObject) throws {
     // step 2.
     // append new event to the events array
    images.append(item)
@@ -72,7 +72,7 @@ class PersistenceHelper {
   }
 
   // read - load (retrieve) items from documents directory
-  public func loadEvents() throws -> [ImagesObject] {
+  public func loadEvents() throws -> [ImageObject] {
     // we need access to the filename URL that we are reading from
     let url = FileManager.pathToDocumentsDirectory(with: filename)
     
@@ -81,7 +81,7 @@ class PersistenceHelper {
     if FileManager.default.fileExists(atPath: url.path) {
       if let data = FileManager.default.contents(atPath: url.path) {
         do {
-          images = try PropertyListDecoder().decode([ImagesObject].self, from: data)
+          images = try PropertyListDecoder().decode([ImageObject].self, from: data)
         } catch {
           throw DataPersistenceError.decodingError(error)
         }

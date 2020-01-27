@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1DDFA223DB8CCB00ED7E0E /* AddPhotoJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DDFA123DB8CCB00ED7E0E /* AddPhotoJournalEntryViewController.swift */; };
 		3EFE3B4423DA395500782F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B4323DA395500782F66 /* AppDelegate.swift */; };
 		3EFE3B4623DA395500782F66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B4523DA395500782F66 /* SceneDelegate.swift */; };
 		3EFE3B4823DA395500782F66 /* PhotoJournalEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B4723DA395500782F66 /* PhotoJournalEntriesViewController.swift */; };
@@ -17,7 +18,7 @@
 		3EFE3B6723DA682300782F66 /* PhotoJournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B6623DA682300782F66 /* PhotoJournalCollectionViewCell.swift */; };
 		3EFE3B6D23DA6CB300782F66 /* FileManager + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B6C23DA6CB300782F66 /* FileManager + Extensions.swift */; };
 		3EFE3B6F23DA6D6400782F66 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B6E23DA6D6400782F66 /* PersistenceHelper.swift */; };
-		3EFE3B7223DA6EF100782F66 /* ImagesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B7123DA6EF100782F66 /* ImagesObject.swift */; };
+		3EFE3B7223DA6EF100782F66 /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE3B7123DA6EF100782F66 /* ImageObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E1DDFA123DB8CCB00ED7E0E /* AddPhotoJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoJournalEntryViewController.swift; sourceTree = "<group>"; };
 		3EFE3B4023DA395500782F66 /* Photo_Journal_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photo_Journal_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EFE3B4323DA395500782F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EFE3B4523DA395500782F66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +47,7 @@
 		3EFE3B6623DA682300782F66 /* PhotoJournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournalCollectionViewCell.swift; sourceTree = "<group>"; };
 		3EFE3B6C23DA6CB300782F66 /* FileManager + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + Extensions.swift"; sourceTree = "<group>"; };
 		3EFE3B6E23DA6D6400782F66 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
-		3EFE3B7123DA6EF100782F66 /* ImagesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesObject.swift; sourceTree = "<group>"; };
+		3EFE3B7123DA6EF100782F66 /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				3EFE3B4723DA395500782F66 /* PhotoJournalEntriesViewController.swift */,
 				3EFE3B6623DA682300782F66 /* PhotoJournalCollectionViewCell.swift */,
+				3E1DDFA123DB8CCB00ED7E0E /* AddPhotoJournalEntryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,7 +133,7 @@
 		3EFE3B7023DA6ED200782F66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3EFE3B7123DA6EF100782F66 /* ImagesObject.swift */,
+				3EFE3B7123DA6EF100782F66 /* ImageObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,9 +241,10 @@
 			files = (
 				3EFE3B6D23DA6CB300782F66 /* FileManager + Extensions.swift in Sources */,
 				3EFE3B6F23DA6D6400782F66 /* PersistenceHelper.swift in Sources */,
+				3E1DDFA223DB8CCB00ED7E0E /* AddPhotoJournalEntryViewController.swift in Sources */,
 				3EFE3B4823DA395500782F66 /* PhotoJournalEntriesViewController.swift in Sources */,
 				3EFE3B4423DA395500782F66 /* AppDelegate.swift in Sources */,
-				3EFE3B7223DA6EF100782F66 /* ImagesObject.swift in Sources */,
+				3EFE3B7223DA6EF100782F66 /* ImageObject.swift in Sources */,
 				3EFE3B4623DA395500782F66 /* SceneDelegate.swift in Sources */,
 				3EFE3B6723DA682300782F66 /* PhotoJournalCollectionViewCell.swift in Sources */,
 			);

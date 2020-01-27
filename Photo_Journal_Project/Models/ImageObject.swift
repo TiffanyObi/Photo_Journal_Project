@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ImagesObject: Codable {
+struct ImageObject: Codable {
     
     let imageData: Data
     let date: Date
